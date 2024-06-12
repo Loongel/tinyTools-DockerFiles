@@ -17,13 +17,14 @@
 - **关键变量**：
   ```bash
   SUDO_PASSWORD=yoursudocode
+  PASSWORD=your_password
   ```
 
 #### 使用方法
 
 - **本地 docker**： 
   ```bash
-  docker run --privileged -itd -p 8780:8443 -e PASSWORD="your_password" -e DEFAULT_WORKSPACE="/codeSpace" --name vscode-metagpt  loongel/tools:vscode_metagpt.v1.0
+  docker run --privileged -itd -p 8780:8443 -e PASSWORD="your_password" --name vscode-metagpt  loongel/tools:vscode_metagpt.v1.0
   ```
 
 - **本地 docker compose**： (待)

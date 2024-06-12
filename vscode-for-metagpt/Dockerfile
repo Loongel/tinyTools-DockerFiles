@@ -59,7 +59,7 @@ COPY README_in_container.md /config/workspace/README.md
 
 ## 使用说明：
 # 线上镜像docker运行脚本：
-# docker run --privileged -itd -p 8780:8443 -e PASSWORD="your_password" -e DEFAULT_WORKSPACE="/codeSpace" --name vscode-metagpt  loongel/tools:vscode_metagpt.v1.0
+# docker run --privileged -itd -p 8780:8443 -e PASSWORD="your_password" --name vscode-metagpt loongel/tools:vscode_metagpt.v1.0
 
 ## 编译脚本：
 # cd path_to_dockerfile
