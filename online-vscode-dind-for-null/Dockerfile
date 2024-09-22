@@ -1,6 +1,5 @@
 # 第一阶段：基于 linuxserver/codeserver 开始
 # 加速源： docker.nju.edu.cn
-# 加速源： wew.crossfw.buzz
 
 # 当前为 linuxserver/code-server 4.89.1-ls214
 FROM linuxserver/code-server:latest  as base

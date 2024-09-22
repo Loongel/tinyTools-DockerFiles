@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  vscode-metagpt:
+    image: loongel/tools:vscode_metagpt.v1.0
+    networks:
+      - vscode_online
+    ports:
+      - "8780:8443"
+    environment:
+      PASSWORD: "yourcode"
+      SUDO_PASSWORD: "sudocode"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - "node.hostname == pack02"
+    restart: always
+    hostname: vscode-metagpt
+    privileged: true
+    volumes:
+      - workspace:/config/workspace
+      - user_home:/config
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8443"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+volumes:
+  workspace:
+    driver: local
+  user_home:
+    driver: local
+    
+networks:
+  vscode_online:
+    driver: overlay
+    attachable: true
